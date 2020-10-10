@@ -1,36 +1,28 @@
-import { Card, CardContent, IconButton, Typography } from "@material-ui/core";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
-import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
+import { IconButton } from "@material-ui/core";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircle";
+import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircle";
 import React from "react";
 import styles from "./ListItem.module.scss";
 
-const ListItem = ({
-  title,
-  subtitle,
-  numberAdded,
-  handleAdd,
-  handleRemove,
-}) => {
+const ListItem = ({ title, numberAdded, price, handleAdd, handleRemove }) => {
   return (
-    <Card>
-      <CardContent
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Typography className={styles.itemText}>{title}</Typography>
-        <Typography className={styles.itemText}>{subtitle}</Typography>
+    <div className={styles.container}>
+      <div>
+        <p>{title}</p>
+      </div>
+      <div>
+        <p>{`£${price.toFixed(2)}`}</p>
+      </div>
+      <div>
         <IconButton onClick={handleRemove} aria-label="remove">
-          <RemoveCircleIcon />
+          <RemoveCircleOutlineIcon />
         </IconButton>
-        <Typography>{numberAdded}</Typography>
+        <p>{numberAdded}</p>
         <IconButton onClick={handleAdd} aria-label="add">
-          <AddCircleIcon />
+          <AddCircleOutlineIcon />
         </IconButton>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 

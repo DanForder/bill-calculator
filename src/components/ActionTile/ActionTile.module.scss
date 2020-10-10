@@ -1,0 +1,29 @@
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 25px;
+  border-radius: 20px;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: unset;
+  background: rgb(43, 118, 192);
+
+  cursor: pointer;
+
+  .header {
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .description {
+    margin: 25px 10px;
+  }
+}
+
+.container:hover {
+  transform: scale(1.05);
+  background: rgb(31, 138, 245);
+}

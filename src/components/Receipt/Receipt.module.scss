@@ -1,9 +1,18 @@
-.receiptContainer {
-  .bold {
-    font-weight: bold;
-  }
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
 
-  li {
-    list-style: none;
+  .receiptList {
+    padding-top: 10%;
+    width: 50%;
+    text-align: center;
+
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+
+    li {
+      padding-bottom: 15px;
+    }
   }
 }

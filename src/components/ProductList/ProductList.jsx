@@ -1,6 +1,6 @@
-import { Typography } from "@material-ui/core";
 import React from "react";
 import ListItem from "../ListItem";
+import styles from "./ProductList.module.scss";
 
 const ProductList = ({ products, handleAdd, handleRemove }) => {
   const getProducts = () => {
@@ -8,7 +8,7 @@ const ProductList = ({ products, handleAdd, handleRemove }) => {
       return (
         <ListItem
           title={product.displayName}
-          subtitle={`£${product.price.toFixed(2)}`}
+          price={product.price}
           numberAdded={product.numberBought}
           key={product.id}
           handleAdd={() => handleAdd(product.id)}
@@ -19,10 +19,20 @@ const ProductList = ({ products, handleAdd, handleRemove }) => {
   };
 
   return (
-    <>
-      <Typography variant="h2">Product List</Typography>
-      {getProducts()}
-    </>
+    <div>
+      <div className={styles.headerContainer}>
+        <div>
+          <h3>Groceries</h3>
+        </div>
+        <div>
+          <h3>Price</h3>
+        </div>
+        <div>
+          <h3>Quantity</h3>
+        </div>
+      </div>
+      <div>{getProducts()}</div>
+    </div>
   );
 };
 

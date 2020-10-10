@@ -1,12 +1,9 @@
-.container {
-  height: 75px;
-
-  margin: 5px 0;
-  border-top: rgb(126, 126, 126) 1px solid;
-
+.headerContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   grid-template-rows: auto;
+
+  padding: 15px 5px;
 
   & > div {
     display: flex;
